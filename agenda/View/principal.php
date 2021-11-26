@@ -103,7 +103,13 @@
         </div>
 
         <div class="w3-rest">
-          <input class="w3-input w3-border w3-round-large" name="txtData" type="date" placeholder="" value="" <?php echo unserialize($_SESSION['Usuario'])->getDataNascimento(); ?>">"
+          <input 
+            class="w3-input w3-border w3-round-large" 
+            name="txtData" 
+            type="date" 
+            placeholder="" 
+            value="<?= unserialize($_SESSION['Usuario'])->getDataNascimento(); ?>"
+            />
         </div>
       </div>
 

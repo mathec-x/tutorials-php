@@ -62,7 +62,7 @@ class OutrasFormacoes
       die("Connection failed: " . $conn->connect_error);
     }
     $sql = "INSERT INTO outrasFormacoes (idusuario, inicio, fim, descricao) 
-              VALUES (" . $this->idusuario . ",'" . $this->inicio . "','" . $this->fim . "','" . $this->descricao . "')
+              VALUES ($this->idusuario, $this->inicio, $this->fim, $this->descricao)
       ";
     echo $sql;
     if ($conn->query($sql) === true) {
@@ -105,6 +105,7 @@ class OutrasFormacoes
       die("Connection failed: " . $conn->connect_error);
     }
     $sql = "SELECT * FROM outrasFormacoes WHERE idusuario = $idusuario";
+    echo $sql;
     $re = $conn->query($sql);
     $conn->close();
     return $re;
